@@ -17,3 +17,7 @@ function fireAt(letterbox) {
         lightning().style.visibility = 'hidden';
     }, 100);
 }
+
+function destroy(letterbox) {
+    letterbox.parentNode.removeChild(letterbox);
+}

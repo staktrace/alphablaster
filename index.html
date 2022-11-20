@@ -24,8 +24,14 @@ function addLetter() {
 }
 addLetter();
 
-window.onkeypress = function() {
-    fireAt(firstActiveLetter());
+window.onkeydown = function(e) {
+    if (firstActiveLetter() == null) {
+        return;
+    }
+    if (e.key.toUpperCase() == firstActiveLetter().textContent.toUpperCase()) {
+        fireAt(firstActiveLetter());
+        destroy(firstActiveLetter());
+    }
 }
 </script>
 </body>
