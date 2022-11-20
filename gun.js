@@ -31,3 +31,5 @@ function destroy(letterbox) {
         document.body.removeChild(fire);
     }, 500);
 }
+
+var _preload = new Audio('destroy.wav');
