@@ -45,7 +45,7 @@ function Star(canvas, size, speed) {
 }
 
 Star.prototype.animate = function(delta) {
-  this.x += this.speed * delta;
+  this.x += 0;//this.speed * delta;
   this.y -= this.speed * delta;
   if (this.y < 0) {
     this.y = window.innerHeight;
