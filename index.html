@@ -1,5 +1,23 @@
 <link rel="stylesheet" href="parallax.css" />
+<link rel="stylesheet" href="letterbox.css"/>
+<link rel="stylesheet" href="letterplane.css"/>
 <script src="parallax.js"></script>
+<script src="letterbox.js"></script>
+<script src="letterplane.js"></script>
+
+<body>
 <div id="background">
   <canvas id="stars"></canvas>
+  <div id="letterplane"></div>
 </div>
+
+<script>
+function addLetter() {
+    newLetter("JK");
+    if (activeLetters() < 5) {
+        setTimeout(addLetter, 1000);
+    }
+}
+addLetter();
+</script>
+</body>
