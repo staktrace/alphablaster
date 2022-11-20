@@ -5,12 +5,14 @@
 <script src="parallax.js"></script>
 <script src="letterbox.js"></script>
 <script src="letterplane.js"></script>
+<script src="gun.js"></script>
 
 <body>
 <div id="background">
   <canvas id="stars"></canvas>
   <div id="letterplane"></div>
   <img id="gun" src="gun.png"/>
+  <img id="lightning" src="lightning.png"/>
 </div>
 
 <script>
@@ -21,5 +23,9 @@ function addLetter() {
     }
 }
 addLetter();
+
+window.onkeypress = function() {
+    fireAt(firstActiveLetter());
+}
 </script>
 </body>

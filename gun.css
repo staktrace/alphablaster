@@ -20,3 +20,13 @@
         transform: rotateZ(130deg);
     }
 }
+
+#lightning {
+    position: absolute;
+    width: 200px;
+    height: 360px;
+    left: calc(50vw - 90px);
+    top: calc(100vh + 3px);
+    transform-origin: top center;
+    visibility: hidden;
+}

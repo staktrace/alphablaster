@@ -40,3 +40,7 @@ function animateFall() {
 function activeLetters() {
     return letterplane().childElementCount;
 }
+
+function firstActiveLetter() {
+    return letterplane().firstElementChild;
+}
