@@ -16,8 +16,12 @@
 </div>
 
 <script>
+var gameOver = false;
 var letterCount = 0;
 function driveGame() {
+    if (gameOver) {
+        return;
+    }
     if (letterCount >= 15) {
         if (activeLetters() == 0) {
             gameOver();
@@ -45,7 +49,13 @@ window.onkeydown = function(e) {
     }
 }
 
+function gameLose() {
+    gameOver = true;
+    new Audio('gamelose.wav').play();
+}
+
 function gameOver() {
+    gameOver = true;
     new Audio('gameover.wav').play();
 }
 

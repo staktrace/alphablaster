@@ -29,6 +29,10 @@ function animateFall() {
     let plane = letterplane();
     for (var child = plane.firstElementChild; child != null; child = child.nextElementSibling) {
         let curTop = parseInt(child.style.top);
+        if (curTop >= plane.getBoundingClientRect().height) {
+            gameLose();
+            return;
+        }
         child.style.top = (curTop + 1) + 'px';
         minTop = Math.min(minTop, curTop);
     }
