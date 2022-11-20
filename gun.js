@@ -20,5 +20,14 @@ function fireAt(letterbox) {
 
 function destroy(letterbox) {
     new Audio('destroy.wav').play();
+    let fire = document.createElement('img');
+    fire.src = 'fire.gif';
+    fire.className = 'fire';
+    fire.style.left = letterbox.getBoundingClientRect().left + 'px';
+    fire.style.top = letterbox.getBoundingClientRect().top + 'px';
+    document.body.appendChild(fire);
     letterbox.parentNode.removeChild(letterbox);
+    setTimeout(function() {
+        document.body.removeChild(fire);
+    }, 500);
 }

@@ -30,3 +30,9 @@
     transform-origin: top center;
     visibility: hidden;
 }
+
+.fire {
+    width: 71px;
+    height: 100px;
+    position: absolute;
+}
