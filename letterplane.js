@@ -34,6 +34,8 @@ function animateFall() {
     }
     if (minTop < plane.getBoundingClientRect().height) {
         requestAnimationFrame(animateFall);
+    } else {
+        startAnimation.started = false;
     }
 }
 
