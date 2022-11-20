@@ -24,7 +24,7 @@ function driveGame() {
     }
     if (letterCount >= 15) {
         if (activeLetters() == 0) {
-            gameOver();
+            gameWin();
         } else {
             setTimeout(driveGame, 3000);
         }
@@ -54,7 +54,7 @@ function gameLose() {
     new Audio('gamelose.wav').play();
 }
 
-function gameOver() {
+function gameWin() {
     gameOver = true;
     new Audio('gameover.wav').play();
 }
