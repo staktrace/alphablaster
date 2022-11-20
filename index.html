@@ -35,12 +35,13 @@ function driveGame() {
 driveGame();
 
 window.onkeydown = function(e) {
-    if (firstActiveLetter() == null) {
+    let target = firstActiveLetter();
+    if (target == null) {
         return;
     }
-    if (e.key.toUpperCase() == firstActiveLetter().textContent.toUpperCase()) {
-        fireAt(firstActiveLetter());
-        destroy(firstActiveLetter());
+    if (e.key.toUpperCase() == target.textContent.toUpperCase()) {
+        fireAt(target);
+        destroy(target);
     }
 }
 
