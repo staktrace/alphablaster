@@ -2,10 +2,12 @@
 <link rel="stylesheet" href="letterbox.css"/>
 <link rel="stylesheet" href="letterplane.css"/>
 <link rel="stylesheet" href="gun.css"/>
+<link rel="stylesheet" href="controls.css"/>
 <script src="parallax.js"></script>
 <script src="letterbox.js"></script>
 <script src="letterplane.js"></script>
 <script src="gun.js"></script>
+<script src="controls.js"></script>
 
 <body>
 <div id="background">
@@ -13,51 +15,7 @@
   <div id="letterplane"></div>
   <img id="gun" src="gun.png"/>
   <img id="lightning" src="lightning.png"/>
+  <div id="title"><div id="name">ALPHABLASTER</div><div id="info">Level <span id="level">1</span>. Spacebar to begin</div></div>
 </div>
 
-<script>
-var gameOver = false;
-var letterCount = 0;
-function driveGame() {
-    if (gameOver) {
-        return;
-    }
-    if (letterCount >= 15) {
-        if (activeLetters() == 0) {
-            gameWin();
-        } else {
-            setTimeout(driveGame, 3000);
-        }
-        return;
-    }
-    if (activeLetters() < 5) {
-        newLetter("JK");
-        letterCount++;
-    }
-    setTimeout(driveGame, 3000);
-}
-driveGame();
-
-window.onkeydown = function(e) {
-    let target = firstActiveLetter();
-    if (target == null) {
-        return;
-    }
-    if (e.key.toUpperCase() == target.textContent.toUpperCase()) {
-        fireAt(target);
-        destroy(target);
-    }
-}
-
-function gameLose() {
-    gameOver = true;
-    new Audio('gamelose.wav').play();
-}
-
-function gameWin() {
-    gameOver = true;
-    new Audio('gameover.wav').play();
-}
-
-</script>
 </body>

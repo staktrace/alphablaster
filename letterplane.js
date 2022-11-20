@@ -33,7 +33,7 @@ function animateFall() {
             gameLose();
             return;
         }
-        child.style.top = (curTop + 1) + 'px';
+        child.style.top = (curTop + dropSpeed()) + 'px';
         minTop = Math.min(minTop, curTop);
     }
     if (minTop < plane.getBoundingClientRect().height) {
