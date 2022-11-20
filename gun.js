@@ -19,5 +19,6 @@ function fireAt(letterbox) {
 }
 
 function destroy(letterbox) {
+    new Audio('destroy.wav').play();
     letterbox.parentNode.removeChild(letterbox);
 }
