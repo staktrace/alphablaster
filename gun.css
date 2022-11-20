@@ -1,0 +1,22 @@
+#gun {
+    position: absolute;
+    left: calc(50vw - 100px);
+    top: calc(100vh - 100px);
+    width: 200px;
+    height: 200px;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateZ(-30deg);
+    }
+
+    to {
+        transform: rotateZ(130deg);
+    }
+}
