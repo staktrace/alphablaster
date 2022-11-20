@@ -16,13 +16,23 @@
 </div>
 
 <script>
-function addLetter() {
-    newLetter("JK");
-    if (activeLetters() < 5) {
-        setTimeout(addLetter, 3000);
+var letterCount = 0;
+function driveGame() {
+    if (letterCount >= 15) {
+        if (activeLetters() == 0) {
+            gameOver();
+        } else {
+            setTimeout(driveGame, 3000);
+        }
+        return;
     }
+    if (activeLetters() < 5) {
+        newLetter("JK");
+        letterCount++;
+    }
+    setTimeout(driveGame, 3000);
 }
-addLetter();
+driveGame();
 
 window.onkeydown = function(e) {
     if (firstActiveLetter() == null) {
@@ -33,5 +43,10 @@ window.onkeydown = function(e) {
         destroy(firstActiveLetter());
     }
 }
+
+function gameOver() {
+    new Audio('gameover.wav').play();
+}
+
 </script>
 </body>
