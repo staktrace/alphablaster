@@ -1,7 +1,7 @@
 const MAX_ACTIVE_LETTERS = 5;
 const LETTERS_PER_LEVEL = 12;
 const LEVELS_PER_GAME = 5;
-const ALPHABET = (window.location.search.length == 0 ? "JK" : window.location.search.substring(1));
+const ALPHABET = (window.location.search.length == 0 ? "JK" : decodeURIComponent(window.location.search.substring(1)));
 const INITIAL_DROP_DELAY = 3000;
 const MIN_DROP_DELAY = 500;
 
